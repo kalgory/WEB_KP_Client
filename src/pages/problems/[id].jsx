@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { Layout, PageHeader } from 'antd';
 
 import styles from 'src/styles/pages/problem/styles.module.css';
+import CodeTextarea from '../../components/atoms/CodeTextarea';
 
 const { Header, Content, Footer } = Layout;
 
@@ -14,7 +15,7 @@ function Problem() {
       </Header>
       <Content className={styles.content}>
         <div>problem content</div>
-        <div>editor</div>
+        <CodeTextarea />
       </Content>
       <Footer>footer</Footer>
     </Layout>
