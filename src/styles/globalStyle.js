@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import 'antd/dist/antd.dark.css';
+import 'antd/dist/antd.css';
 
 const GlobalStyle = createGlobalStyle`
 `;
