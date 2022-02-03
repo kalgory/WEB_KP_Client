@@ -9,7 +9,7 @@ function CodeEditor() {
       defaultLanguage='javascript'
       value={value}
       onChange={(newValue) => setValue(newValue)}
-      options={{ fontSize: 16 }}
+      options={{ fontSize: 16, tabSize: 2 }}
     />
   );
 }

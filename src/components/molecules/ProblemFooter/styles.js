@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 // eslint-disable-next-line import/prefer-default-export
 export const Wrapper = styled.div`
-  height: 100%;
-  padding: 24px;
-  font-size: 18px;
+  display: flex;
+  justify-content: end;
+  padding: 16px 32px;
 `;

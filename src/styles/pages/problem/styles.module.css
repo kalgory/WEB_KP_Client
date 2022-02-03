@@ -2,8 +2,23 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background-color: #1e1e1e;
 }
 
 .main {
+    flex-grow: 1;
+    display: flex;
+}
+
+.problemContent {
+    height: 100%;
+    padding: 24px;
+    font-size: 18px;
+    width: 40%;
+}
+
+.codeEditor {
+    padding: 36px 0;
+    height: 100%;
     flex-grow: 1;
 }
