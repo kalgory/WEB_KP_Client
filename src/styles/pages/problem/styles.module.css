@@ -6,19 +6,20 @@
 }
 
 .main {
-    flex-grow: 1;
+    height: calc(100vh - 72px - 64px);
     display: flex;
 }
 
 .problemContent {
-    height: 100%;
     padding: 24px;
     font-size: 18px;
+    overflow-y: scroll;
     width: 40%;
+    min-width: 100px;
 }
 
 .codeEditor {
+    min-width: 300px;
     padding: 36px 0;
-    height: 100%;
     flex-grow: 1;
 }
