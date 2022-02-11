@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { PauseCircleOutlined } from '@ant-design/icons';
 import { Wrapper, Divider } from './styles';
 
 function ProblemResizer({ onResize }) {
@@ -32,7 +31,7 @@ function ProblemResizer({ onResize }) {
   return (
     <Wrapper onMouseDown={() => setIsMouseDown(true)}>
       <Divider />
-      <PauseCircleOutlined />
+      <button type='button'>temp</button>
       <Divider />
     </Wrapper>
   );

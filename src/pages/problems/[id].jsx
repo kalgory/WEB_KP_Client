@@ -1,16 +1,13 @@
 import { useRef } from 'react';
-import { useRouter } from 'next/router';
-import { PageHeader } from 'antd';
+// import { useRouter } from 'next/router';
 
 import CodeEditor from 'src/components/atoms/CodeEditor';
 import ProblemContent from 'src/components/atoms/ProblemContent';
 import ProblemFooter from 'src/components/molecules/ProblemFooter';
 import ProblemResizer from 'src/components/molecules/ProblemResizer';
 
-import styles from 'src/styles/pages/problem/styles.module.css';
-
 function Problem() {
-  const router = useRouter();
+  // const router = useRouter();
   const problemContentContainerRef = useRef(null);
 
   const adjustSize = (contentWidth) => {
@@ -18,16 +15,16 @@ function Problem() {
   };
 
   return (
-    <div className={styles.wrapper}>
-      <PageHeader onBack={() => router.back()} title='다리 건너기' subTitle='실버3' />
-      <main className={styles.main}>
-        <div className={styles.problemContent} ref={problemContentContainerRef}>
+    <div>
+      {/* <PageHeader onBack={() => router.back()} title='다리 건너기' subTitle='실버3' /> */}
+      <main>
+        <div ref={problemContentContainerRef}>
           <ProblemContent />
         </div>
         <div>
           <ProblemResizer onResize={adjustSize} />
         </div>
-        <div className={styles.codeEditor}>
+        <div>
           <CodeEditor />
         </div>
       </main>
