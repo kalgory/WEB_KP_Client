@@ -1,9 +1,12 @@
 import useClock from 'src/hooks/useClock';
+
+import { formatHHMMSS } from 'src/utils/moment';
+
 import { Label } from './styles';
 
 function Timer() {
-  const time = useClock();
-  return <Label>{time.toLocaleTimeString('kr-KO', { hour12: true })}</Label>;
+  const now = useClock();
+  return <Label>{formatHHMMSS(now)}</Label>;
 }
 
 export default Timer;
