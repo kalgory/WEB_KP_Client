@@ -1,8 +1,21 @@
+import dynamic from 'next/dynamic';
+import Head from 'next/head';
+
+import { Center } from 'src/styles/pages/styles';
+
+const Timer = dynamic(() => import('src/components/atoms/Timer'), {
+  ssr: false,
+});
+
 function Home() {
   return (
     <>
-      <h1>12:00:33</h1>
-      <h1>00:33</h1>
+      <Head>
+        <title>KP</title>
+      </Head>
+      <Center>
+        <Timer />
+      </Center>
     </>
   );
 }
