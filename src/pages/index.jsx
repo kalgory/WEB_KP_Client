@@ -1,17 +1,25 @@
-import { Layout } from 'antd';
+import dynamic from 'next/dynamic';
+import Head from 'next/head';
 
-import HeaderMenu from 'src/components/atoms/HeaderMenu';
+import Header from 'src/components/molecules/Header';
 
-const { Header, Content } = Layout;
+import { Center } from 'src/styles/pages/styles';
+
+const Timer = dynamic(() => import('src/components/atoms/Timer'), {
+  ssr: false,
+});
 
 function Home() {
   return (
-    <Layout>
-      <Header>
-        <HeaderMenu />
-      </Header>
-      <Content>home</Content>
-    </Layout>
+    <>
+      <Head>
+        <title>KP</title>
+      </Head>
+      <Header />
+      <Center>
+        <Timer />
+      </Center>
+    </>
   );
 }
 
