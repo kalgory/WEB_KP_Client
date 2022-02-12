@@ -1,12 +1,10 @@
-import { Button } from 'antd';
-
 import { Wrapper } from './styles';
 
 function ProblemFooter() {
   return (
     <Wrapper>
-      <Button>실행</Button>
-      <Button type='primary'>제출</Button>
+      <button type='button'>실행</button>
+      <button type='button'>제출</button>
     </Wrapper>
   );
 }
