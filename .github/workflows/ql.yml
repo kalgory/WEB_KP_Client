@@ -1,4 +1,4 @@
-name: CodeQL
+name: QL
 on: pull_request
 jobs:
   analyze:
