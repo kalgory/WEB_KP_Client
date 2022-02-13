@@ -1,7 +1,11 @@
 import { Wrapper } from './styles';
 
-function Button({ children }) {
-  return <Wrapper type='button'>{children}</Wrapper>;
+function Button({ onClick, children }) {
+  return (
+    <Wrapper type='button' onClick={onClick}>
+      {children}
+    </Wrapper>
+  );
 }
 
 export default Button;
