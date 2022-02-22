@@ -13,10 +13,14 @@ export const Input = styled.input`
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
-  color: #fff;
+  color: #ffffff;
   font-family: Montserrat, sans-serif;
   font-weight: 500;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+  &::placeholder {
+    color: #cccccc;
+  }
 `;

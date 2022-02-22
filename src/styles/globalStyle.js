@@ -8,9 +8,13 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: rgb(116,84,245);
-    background: linear-gradient(100deg, rgba(116,84,245,1) 0%, rgba(197,129,217,1) 100%);
+    background: #7454f5;
+    background: linear-gradient(100deg, #7454f5 0%, #6b3295 100%);
     color: #ffffff;
+  }
+
+  button {
+    cursor: pointer;
   }
 `;
 

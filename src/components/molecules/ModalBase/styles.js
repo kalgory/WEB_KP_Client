@@ -12,10 +12,10 @@ export const Background = styled.div`
 
 export const Content = styled.div`
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 30vw;
+  width: 400px;
   z-index: 1;
   padding: 48px;
   display: flex;
