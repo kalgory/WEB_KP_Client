@@ -1,16 +1,12 @@
-import dynamic from 'next/dynamic';
 import { useRecoilState } from 'recoil';
 
+import ModalBase from 'src/components/molecules/ModalBase';
 import ModalInput from 'src/components/atoms/ModalInput';
 import ModalButton from 'src/components/atoms/ModalButton';
 
 import isAuthModalShowAtom from 'src/recoil/isAuthModalShow';
 
 import { Form, Title } from './styles';
-
-const ModalBase = dynamic(() => import('src/components/molecules/ModalBase'), {
-  ssr: false,
-});
 
 function AuthModal() {
   const [isAuthModalShow, setIsAuthModalShow] = useRecoilState(isAuthModalShowAtom);
