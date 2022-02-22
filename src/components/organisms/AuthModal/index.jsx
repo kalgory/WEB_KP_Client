@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 import { useRecoilState } from 'recoil';
 
 import ModalInput from 'src/components/atoms/ModalInput';
+import ModalButton from 'src/components/atoms/ModalButton';
 
 import isAuthModalShowAtom from 'src/recoil/isAuthModalShow';
 
@@ -20,6 +21,7 @@ function AuthModal() {
     >
       <ModalInput />
       <ModalInput />
+      <ModalButton />
     </ModalBase>
   );
 }
