@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Background = styled.div`
   position: absolute;
@@ -8,6 +8,24 @@ export const Background = styled.div`
   width: 100vw;
   z-index: 1;
   cursor: pointer;
+`;
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 `;
 
 export const Content = styled.div`
@@ -27,4 +45,7 @@ export const Content = styled.div`
   -webkit-backdrop-filter: blur(15px);
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+
+  animation-name: ${({ isVisible }) => (isVisible ? fadeIn : fadeOut)};
+  animation-duration: 0.15s;
 `;

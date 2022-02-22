@@ -1,13 +1,17 @@
 import { createPortal } from 'react-dom';
 
+import useDelayedState from 'src/hooks/useDelayedState';
+
 import { Background, Content } from './styles';
 
 function Modal({ onClose, isVisible, children }) {
+  const delayedIsVisible = useDelayedState(isVisible, 150);
+
   return createPortal(
-    isVisible && (
+    delayedIsVisible && (
       <>
         <Background onClick={onClose} />
-        <Content>{children}</Content>
+        <Content isVisible={isVisible}>{children}</Content>
       </>
     ),
     document.getElementById('modal'),
