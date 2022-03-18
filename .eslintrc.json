@@ -8,7 +8,7 @@
     "plugin:react/recommended",
     "airbnb",
     "prettier",
-    "next/core-web-vitals"
+    "plugin:@next/next/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {

@@ -9,7 +9,7 @@ const Timer = dynamic(() => import('src/components/atoms/Timer'), {
   ssr: false,
 });
 
-function Home() {
+function Index() {
   return (
     <>
       <Head>
@@ -23,4 +23,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Index;
