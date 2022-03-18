@@ -35,7 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@monaco-editor/react", "virtual:61d8008a961c429d263eb8518b0672f19b47500fab12984aba8769b24940e11afde7726fe85333f24cffec55dde9a6aa3606d1d08b3e222a33b29b0bafe9155d#npm:4.3.1"],\
             ["@next/eslint-plugin-next", "npm:12.1.0"],\
-            ["axios", "npm:0.25.0"],\
+            ["axios", "npm:0.26.1"],\
             ["eslint", "npm:8.11.0"],\
             ["eslint-config-airbnb", "virtual:61d8008a961c429d263eb8518b0672f19b47500fab12984aba8769b24940e11afde7726fe85333f24cffec55dde9a6aa3606d1d08b3e222a33b29b0bafe9155d#npm:19.0.4"],\
             ["eslint-config-next", "virtual:61d8008a961c429d263eb8518b0672f19b47500fab12984aba8769b24940e11afde7726fe85333f24cffec55dde9a6aa3606d1d08b3e222a33b29b0bafe9155d#npm:12.0.9"],\
@@ -798,11 +798,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["axios", [\
-        ["npm:0.25.0", {\
-          "packageLocation": "./.yarn/cache/axios-npm-0.25.0-a1c287d287-2a8a3787c0.zip/node_modules/axios/",\
+        ["npm:0.26.1", {\
+          "packageLocation": "./.yarn/cache/axios-npm-0.26.1-a6641ce4e3-d9eb58ff4b.zip/node_modules/axios/",\
           "packageDependencies": [\
-            ["axios", "npm:0.25.0"],\
-            ["follow-redirects", "virtual:a1c287d287cceec925a9c0ff143359f3710be8008f8559da00a15e4d93f76849e9493b8b7760d073ae605ea56d1482d54174c007b28cbf6b38332d152576190f#npm:1.14.9"]\
+            ["axios", "npm:0.26.1"],\
+            ["follow-redirects", "virtual:a6641ce4e3bdcc0997f8f53d9481b67c5d38e21276de8eeee7bf92881685b3ad5600bae416c2af904ceab8132bac649e7efd0af93f18e158e0e65ee05a263d72#npm:1.14.9"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1948,10 +1948,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:a1c287d287cceec925a9c0ff143359f3710be8008f8559da00a15e4d93f76849e9493b8b7760d073ae605ea56d1482d54174c007b28cbf6b38332d152576190f#npm:1.14.9", {\
-          "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-5bbc9bd0f6/0/cache/follow-redirects-npm-1.14.9-522f191631-f5982e0eb4.zip/node_modules/follow-redirects/",\
+        ["virtual:a6641ce4e3bdcc0997f8f53d9481b67c5d38e21276de8eeee7bf92881685b3ad5600bae416c2af904ceab8132bac649e7efd0af93f18e158e0e65ee05a263d72#npm:1.14.9", {\
+          "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-2db68225c5/0/cache/follow-redirects-npm-1.14.9-522f191631-f5982e0eb4.zip/node_modules/follow-redirects/",\
           "packageDependencies": [\
-            ["follow-redirects", "virtual:a1c287d287cceec925a9c0ff143359f3710be8008f8559da00a15e4d93f76849e9493b8b7760d073ae605ea56d1482d54174c007b28cbf6b38332d152576190f#npm:1.14.9"],\
+            ["follow-redirects", "virtual:a6641ce4e3bdcc0997f8f53d9481b67c5d38e21276de8eeee7bf92881685b3ad5600bae416c2af904ceab8132bac649e7efd0af93f18e158e0e65ee05a263d72#npm:1.14.9"],\
             ["@types/debug", null],\
             ["debug", null]\
           ],\
@@ -2463,7 +2463,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["kp", "workspace:."],\
             ["@monaco-editor/react", "virtual:61d8008a961c429d263eb8518b0672f19b47500fab12984aba8769b24940e11afde7726fe85333f24cffec55dde9a6aa3606d1d08b3e222a33b29b0bafe9155d#npm:4.3.1"],\
             ["@next/eslint-plugin-next", "npm:12.1.0"],\
-            ["axios", "npm:0.25.0"],\
+            ["axios", "npm:0.26.1"],\
             ["eslint", "npm:8.11.0"],\
             ["eslint-config-airbnb", "virtual:61d8008a961c429d263eb8518b0672f19b47500fab12984aba8769b24940e11afde7726fe85333f24cffec55dde9a6aa3606d1d08b3e222a33b29b0bafe9155d#npm:19.0.4"],\
             ["eslint-config-next", "virtual:61d8008a961c429d263eb8518b0672f19b47500fab12984aba8769b24940e11afde7726fe85333f24cffec55dde9a6aa3606d1d08b3e222a33b29b0bafe9155d#npm:12.0.9"],\
