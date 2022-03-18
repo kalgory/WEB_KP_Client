@@ -1,6 +1,8 @@
+import { useMutation } from 'react-query';
 import { useRecoilState } from 'recoil';
+import axios from 'axios';
 
-import ModalBase from 'src/components/molecules/ModalBase';
+import ModalBase from 'src/components/atoms/ModalBase';
 import ModalInput from 'src/components/atoms/ModalInput';
 import ModalButton from 'src/components/atoms/ModalButton';
 
@@ -10,11 +12,15 @@ import { Form, Title } from './styles';
 
 function AuthModal() {
   const [isAuthModalShow, setIsAuthModalShow] = useRecoilState(isAuthModalShowAtom);
+  const mutation = useMutation(({ email, password }) =>
+    axios.post('api/sign-in', { email, password }),
+  );
+
   const signIn = (event) => {
-    const formData = new FormData(event.target);
-    // eslint-disable-next-line no-unused-vars
-    const data = Object.fromEntries(formData);
     event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    mutation.mutate(data);
   };
 
   return (
@@ -26,7 +32,7 @@ function AuthModal() {
     >
       <Form onSubmit={signIn}>
         <Title>Welcome</Title>
-        <ModalInput type='email' placeholder='Email' autoFocus name='email' />
+        <ModalInput type='email' placeholder='Email' autoFocus name='email' value='' />
         <ModalInput type='password' placeholder='Password' name='password' />
         <ModalButton type='submit'>Sign in</ModalButton>
       </Form>
