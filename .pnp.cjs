@@ -49,7 +49,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prop-types", "npm:15.8.1"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:61d8008a961c429d263eb8518b0672f19b47500fab12984aba8769b24940e11afde7726fe85333f24cffec55dde9a6aa3606d1d08b3e222a33b29b0bafe9155d#npm:17.0.2"],\
-            ["react-is", "npm:17.0.2"],\
             ["recoil", "virtual:61d8008a961c429d263eb8518b0672f19b47500fab12984aba8769b24940e11afde7726fe85333f24cffec55dde9a6aa3606d1d08b3e222a33b29b0bafe9155d#npm:0.6.1"],\
             ["styled-components", "virtual:61d8008a961c429d263eb8518b0672f19b47500fab12984aba8769b24940e11afde7726fe85333f24cffec55dde9a6aa3606d1d08b3e222a33b29b0bafe9155d#npm:5.3.3"]\
           ],\
@@ -2424,7 +2423,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prop-types", "npm:15.8.1"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:61d8008a961c429d263eb8518b0672f19b47500fab12984aba8769b24940e11afde7726fe85333f24cffec55dde9a6aa3606d1d08b3e222a33b29b0bafe9155d#npm:17.0.2"],\
-            ["react-is", "npm:17.0.2"],\
             ["recoil", "virtual:61d8008a961c429d263eb8518b0672f19b47500fab12984aba8769b24940e11afde7726fe85333f24cffec55dde9a6aa3606d1d08b3e222a33b29b0bafe9155d#npm:0.6.1"],\
             ["styled-components", "virtual:61d8008a961c429d263eb8518b0672f19b47500fab12984aba8769b24940e11afde7726fe85333f24cffec55dde9a6aa3606d1d08b3e222a33b29b0bafe9155d#npm:5.3.3"]\
           ],\
@@ -3313,7 +3311,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/react-is",\
             "@types/react",\
             "react-dom",\
-            "react-is",\
             "react"\
           ],\
           "linkType": "HARD"\
