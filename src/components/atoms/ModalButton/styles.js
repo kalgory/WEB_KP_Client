@@ -4,7 +4,7 @@ export const Wrapper = styled.button`
   align-self: center;
   background: transparent;
   height: 60px;
-  width: 168px;
+  width: ${({ isLoading }) => (isLoading ? '60px' : '168px')};
   padding: 0 24px;
   margin: 28px 0;
   border: none;

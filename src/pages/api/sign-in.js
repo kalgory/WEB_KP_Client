@@ -1,9 +1,10 @@
 import axios from 'axios';
 
+const url = 'https://auth.kalgory.com/sign-in';
 async function handler(req, res) {
-  const { email: id, password } = req.body;
-  await axios.post('https://auth.kalgory.com/sign-in', { id, password });
-  res.status(200).json({ name: 'John Doe' });
+  const response = await axios.post(url, req.body);
+  res.setHeader('set-cookie', response.headers['set-cookie']);
+  res.status(response.status).end();
 }
 
 export default handler;
