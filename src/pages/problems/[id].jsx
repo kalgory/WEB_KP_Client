@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 // import { useRouter } from 'next/router';
 
-import CodeEditor from 'src/components/atoms/CodeEditor';
-import ProblemContent from 'src/components/atoms/ProblemContent';
-import ProblemFooter from 'src/components/molecules/ProblemFooter';
-import ProblemResizer from 'src/components/molecules/ProblemResizer';
+import CodeEditor from '@/components/atoms/CodeEditor';
+import ProblemContent from '@/components/atoms/ProblemContent';
+import ProblemFooter from '@/components/molecules/ProblemFooter';
+import ProblemResizer from '@/components/molecules/ProblemResizer';
 
 function Problem() {
   // const router = useRouter();

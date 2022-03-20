@@ -1,11 +1,11 @@
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 
-import Header from 'src/components/molecules/Header';
+import Header from '@/components/molecules/Header';
 
-import { Center } from 'src/styles/pages/styles';
+import { Center } from '@/styles/pages/styles';
 
-const Timer = dynamic(() => import('src/components/atoms/Timer'), {
+const Timer = dynamic(() => import('@/components/atoms/Timer'), {
   ssr: false,
 });
 

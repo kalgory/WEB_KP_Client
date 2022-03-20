@@ -1,6 +1,6 @@
-import useClock from 'src/hooks/useClock';
+import useClock from '@/hooks/useClock';
 
-import { formatHHMMSS } from 'src/utils/moment';
+import { formatHHMMSS } from '@/utils/moment';
 
 import { Label } from './styles';
 

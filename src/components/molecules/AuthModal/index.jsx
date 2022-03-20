@@ -2,11 +2,11 @@ import { useMutation } from 'react-query';
 import { useRecoilState } from 'recoil';
 import axios from 'axios';
 
-import ModalBase from 'src/components/atoms/ModalBase';
-import ModalInput from 'src/components/atoms/ModalInput';
-import ModalButton from 'src/components/atoms/ModalButton';
+import ModalBase from '@/components/atoms/ModalBase';
+import ModalInput from '@/components/atoms/ModalInput';
+import ModalButton from '@/components/atoms/ModalButton';
 
-import isAuthModalShowAtom from 'src/recoil/isAuthModalShow';
+import isAuthModalShowAtom from '@/recoil/isAuthModalShow';
 
 import { Form, Title } from './styles';
 

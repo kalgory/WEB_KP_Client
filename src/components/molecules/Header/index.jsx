@@ -1,7 +1,7 @@
-import Logo from 'src/components/atoms/Logo';
-import Button from 'src/components/atoms/Button';
+import Logo from '@/components/atoms/Logo';
+import Button from '@/components/atoms/Button';
 
-import useAuthModal from 'src/hooks/useAuthModal';
+import useAuthModal from '@/hooks/useAuthModal';
 
 import { Wrapper, Spacer } from './styles';
 

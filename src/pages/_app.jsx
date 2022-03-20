@@ -2,9 +2,9 @@ import dynamic from 'next/dynamic';
 import { RecoilRoot } from 'recoil';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-import GlobalStyle from 'src/styles/globalStyle';
+import GlobalStyle from '@/styles/globalStyle';
 
-const AuthModal = dynamic(() => import('src/components/molecules/AuthModal'), {
+const AuthModal = dynamic(() => import('@/components/molecules/AuthModal'), {
   ssr: false,
 });
 

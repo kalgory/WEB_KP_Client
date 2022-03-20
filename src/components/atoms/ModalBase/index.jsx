@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom';
 
-import useDelayedState from 'src/hooks/useDelayedState';
+import useDelayedState from '@/hooks/useDelayedState';
 
 import { Background, Content } from './styles';
 
