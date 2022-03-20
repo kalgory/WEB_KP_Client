@@ -4,7 +4,13 @@ import { Input } from './styles';
 
 function ModalInput({ type, placeholder, autoFocus, name, value }) {
   return (
-    <Input type={type} placeholder={placeholder} autoFocus={autoFocus} name={name} value={value} />
+    <Input
+      type={type}
+      placeholder={placeholder}
+      autoFocus={autoFocus}
+      name={name}
+      value={value}
+    />
   );
 }
 

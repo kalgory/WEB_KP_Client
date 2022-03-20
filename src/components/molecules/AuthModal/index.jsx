@@ -27,12 +27,27 @@ function AuthModal() {
   };
 
   return (
-    <ModalBase isVisible={isAuthModalShow} onClose={() => setIsAuthModalShow(false)}>
+    <ModalBase
+      isVisible={isAuthModalShow}
+      onClose={() => setIsAuthModalShow(false)}
+    >
       <Form onSubmit={signIn}>
         <Title>Welcome</Title>
-        <ModalInput type='email' placeholder='Email' autoFocus name='email' />
-        <ModalInput type='password' placeholder='Password' name='password' />
-        <ModalButton type='submit' isLoading={isLoading}>
+        <ModalInput
+          type='email'
+          placeholder='Email'
+          autoFocus
+          name='email'
+        />
+        <ModalInput
+          type='password'
+          placeholder='Password'
+          name='password'
+        />
+        <ModalButton
+          type='submit'
+          isLoading={isLoading}
+        >
           Sign in
         </ModalButton>
       </Form>
