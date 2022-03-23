@@ -23,7 +23,6 @@ ModalInput.propTypes = {
 ModalInput.defaultProps = {
   autoFocus: false,
   name: '',
-  value: '',
 };
 
 export default ModalInput;
