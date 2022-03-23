@@ -4,7 +4,10 @@ import { Wrapper } from './styles';
 
 function ModalButton({ children, type, isLoading }) {
   return (
-    <Wrapper type={type} isLoading={isLoading}>
+    <Wrapper
+      type={type}
+      isLoading={isLoading}
+    >
       {children}
     </Wrapper>
   );

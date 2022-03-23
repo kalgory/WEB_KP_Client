@@ -1,12 +1,10 @@
-import useClock from 'src/hooks/useClock';
-
-import { formatHHMMSS } from 'src/utils/moment';
+import useClock from '@/hooks/useClock';
 
 import { Label } from './styles';
 
 function Timer() {
-  const now = useClock();
-  return <Label>{formatHHMMSS(now)}</Label>;
+  const { formattedTime } = useClock({ format: 'HH:mm:ss' });
+  return <Label>{formattedTime}</Label>;
 }
 
 export default Timer;

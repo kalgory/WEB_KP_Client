@@ -1,26 +1,22 @@
 import { useEffect, useRef, useState } from 'react';
 
-function useClock() {
-  const [time, setTime] = useState(new Date());
+import dayjs from 'dayjs';
+
+function useClock({ format }) {
+  const [time, setTime] = useState(dayjs());
   const id = useRef(null);
 
   useEffect(() => {
     const step = () => {
-      setTime((prevTime) => {
-        const newTime = new Date();
-        if (prevTime.getSeconds() !== newTime.getSeconds()) {
-          return newTime;
-        }
-        return prevTime;
-      });
+      const newTime = dayjs();
+      setTime((prevTime) => (prevTime.second() === newTime.second() ? prevTime : newTime));
       id.current = requestAnimationFrame(step);
     };
     id.current = requestAnimationFrame(step);
-    return () => {
-      cancelAnimationFrame(id.current);
-    };
+    return () => cancelAnimationFrame(id.current);
   }, []);
-  return time;
+
+  return { formattedTime: time.format(format) };
 }
 
 export default useClock;
