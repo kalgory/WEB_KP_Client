@@ -1,5 +1,5 @@
 import Logo from '@/components/atoms/Logo';
-import Button from '@/components/atoms/Button';
+import HeaderButton from '@/components/atoms/HeaderButton';
 
 import useModal from '@/hooks/useModal';
 
@@ -12,7 +12,7 @@ function Header() {
     <Wrapper>
       <Logo />
       <Spacer />
-      <Button onClick={() => show()}>Sign in</Button>
+      <HeaderButton onClick={() => show()}>Sign in</HeaderButton>
     </Wrapper>
   );
 }
