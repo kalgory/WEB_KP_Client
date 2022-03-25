@@ -1,21 +1,18 @@
 import { useMutation } from 'react-query';
-import { useRecoilState } from 'recoil';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 
 import ModalBase from '@/components/atoms/ModalBase';
 import ModalInput from '@/components/atoms/ModalInput';
 import ModalButton from '@/components/atoms/ModalButton';
 
-import isAuthModalShowAtom from '@/recoil/isAuthModalShow';
-
 import { Form, Title } from './styles';
 
-function AuthModal() {
-  const [isAuthModalShow, setIsAuthModalShow] = useRecoilState(isAuthModalShowAtom);
+function AuthModal({ onClose }) {
   const { mutate, isLoading } = useMutation(
     ({ email, password }) => axios.post('api/sign-in', { email, password }),
     {
-      onSuccess: () => setIsAuthModalShow(false),
+      onSuccess: () => onClose(),
     },
   );
 
@@ -27,10 +24,7 @@ function AuthModal() {
   };
 
   return (
-    <ModalBase
-      isVisible={isAuthModalShow}
-      onClose={() => setIsAuthModalShow(false)}
-    >
+    <ModalBase onClose={onClose}>
       <Form onSubmit={signIn}>
         <Title>Welcome</Title>
         <ModalInput
@@ -54,5 +48,13 @@ function AuthModal() {
     </ModalBase>
   );
 }
+
+AuthModal.propTypes = {
+  onClose: PropTypes.func,
+};
+
+AuthModal.defaultProps = {
+  onClose: () => {},
+};
 
 export default AuthModal;

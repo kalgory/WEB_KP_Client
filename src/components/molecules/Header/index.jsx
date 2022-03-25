@@ -1,12 +1,12 @@
 import Logo from '@/components/atoms/Logo';
 import Button from '@/components/atoms/Button';
 
-import useAuthModal from '@/hooks/useAuthModal';
+import useModal from '@/hooks/useModal';
 
 import { Wrapper, Spacer } from './styles';
 
 function Header() {
-  const { show } = useAuthModal();
+  const { show } = useModal();
 
   return (
     <Wrapper>
