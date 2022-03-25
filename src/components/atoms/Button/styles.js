@@ -5,8 +5,9 @@ export const Wrapper = styled.button`
   margin: 4px;
   font-size: 20px;
   font-family: 'Share Tech Mono', monospace;
-  background-color: #ffffff;
-  color: #7454f5;
+  background-color: transparent;
+  color: ${({ disabled }) => (disabled ? '#777777' : '#ffffff')};
   border-radius: 16px;
-  border: none;
+  border: 2px solid ${({ disabled }) => (disabled ? '#777777' : '#ffffff')};
+  cursor: ${({ disabled }) => (disabled ? 'auto' : 'cursor')};
 `;
