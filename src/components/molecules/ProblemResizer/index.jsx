@@ -31,8 +31,6 @@ function ProblemResizer({ onResize }) {
   return (
     <Wrapper onMouseDown={() => setIsMouseDown(true)}>
       <Divider />
-      <button type='button'>temp</button>
-      <Divider />
     </Wrapper>
   );
 }
