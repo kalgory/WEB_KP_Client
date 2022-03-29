@@ -6,7 +6,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest"
+    "test:unit": "jest",
+    "test:e2e:open": "cypress open",
+    "test:e2e:run": "cypress run"
   },
   "dependencies": {
     "@monaco-editor/react": "^4.3.1",
