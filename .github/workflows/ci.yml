@@ -5,26 +5,38 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: 체크아웃
+        uses: actions/checkout@v3
+      - name: 노드 버전 셋업
+        uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - run: yarn install
-      - uses: reviewdog/action-eslint@v1
-        with:
-          reporter: github-pr-review
-          eslint_flags: 'src/'
-  test:
-    name: Test
+      - name: 린트 실행
+        run: yarn lint
+  e2e-test:
+    name: E2E-Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: 체크아웃
+        uses: actions/checkout@v3
+      - name: 노드 버전 셋업
+        uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - uses: cypress-io/github-action@v2
+      - name: E2E 테스트 실행
+        uses: cypress-io/github-action@v2
         with:
           build: yarn run build
           start: yarn start
-      - run: yarn install --immutable --immutable-cache --check-cache
-      - run: yarn test
+  unit-test:
+    name: Unit-Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: 체크아웃
+        uses: actions/checkout@v3
+      - name: 노드 버전 셋업
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: 유닛 테스트 실행
+        run: yarn test
