@@ -11,6 +11,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
+      - name: 의존성 설치
+        run: yarn install --immutable
       - name: 린트 실행
         run: yarn lint
   e2e-test:
@@ -26,8 +28,10 @@ jobs:
       - name: E2E 테스트 실행
         uses: cypress-io/github-action@v2
         with:
-          build: yarn run build
+          install-command : yarn install --immutable
+          build: yarn build
           start: yarn start
+          command: yarn run test:e2e:run
   unit-test:
     name: Unit-Test
     runs-on: ubuntu-latest
@@ -38,5 +42,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
+      - name: 의존성 설치
+        run: yarn install --immutable
       - name: 유닛 테스트 실행
-        run: yarn test
+        run: yarn test:unit
