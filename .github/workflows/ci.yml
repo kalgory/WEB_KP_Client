@@ -7,10 +7,15 @@ jobs:
     steps:
       - name: 체크아웃
         uses: actions/checkout@v3
-      - name: 노드 버전 셋업
+      - name: 노드 셋업
         uses: actions/setup-node@v3
         with:
           node-version: '16'
+      - name: 캐시 체크
+        uses: actions/cache@v3
+        with:
+          path: ./.yarn/cache
+          key: yarn-${{ hashFiles('**/yarn.lock') }}
       - name: 의존성 설치
         run: yarn install --immutable
       - name: 린트 실행
@@ -21,14 +26,19 @@ jobs:
     steps:
       - name: 체크아웃
         uses: actions/checkout@v3
-      - name: 노드 버전 셋업
+      - name: 노드 셋업
         uses: actions/setup-node@v3
         with:
           node-version: '16'
+      - name: 캐시 체크
+        uses: actions/cache@v3
+        with:
+          path: ./.yarn/cache
+          key: yarn-${{ hashFiles('**/yarn.lock') }}
       - name: E2E 테스트 실행
         uses: cypress-io/github-action@v2
         with:
-          install-command : yarn install --immutable
+          install-command: yarn install --immutable
           build: yarn build
           start: yarn start
           command: yarn run test:e2e:run
@@ -38,10 +48,16 @@ jobs:
     steps:
       - name: 체크아웃
         uses: actions/checkout@v3
-      - name: 노드 버전 셋업
+      - name: 노드 셋업
         uses: actions/setup-node@v3
         with:
           node-version: '16'
+      - name: 캐시 체크
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: ./.yarn/cache
+          key: yarn-${{ hashFiles('**/yarn.lock') }}
       - name: 의존성 설치
         run: yarn install --immutable
       - name: 유닛 테스트 실행
