@@ -6,7 +6,7 @@ import { Wrapper, Divider } from './styles';
 function ProblemResizer({ onResize }) {
   const [isMouseDown, setIsMouseDown] = useState(false);
 
-  const handleMouseMove = useCallback(({ clientX }) => {}, [isMouseDown, onResize]);
+  const handleMouseMove = useCallback(() => {}, [isMouseDown, onResize]);
 
   const handleMouseUp = () => setIsMouseDown(false);
 
