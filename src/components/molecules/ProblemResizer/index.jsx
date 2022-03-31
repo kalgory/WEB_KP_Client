@@ -6,18 +6,9 @@ import { Wrapper, Divider } from './styles';
 function ProblemResizer({ onResize }) {
   const [isMouseDown, setIsMouseDown] = useState(false);
 
-  const handleMouseMove = useCallback(
-    ({ clientX }) => {
-      if (isMouseDown) {
-        onResize(clientX, window.innerWidth - clientX);
-      }
-    },
-    [isMouseDown, onResize],
-  );
+  const handleMouseMove = useCallback(() => {}, [isMouseDown, onResize]);
 
-  const handleMouseUp = () => {
-    setIsMouseDown(false);
-  };
+  const handleMouseUp = () => setIsMouseDown(false);
 
   useEffect(() => {
     window.addEventListener('mousemove', handleMouseMove);
@@ -30,8 +21,6 @@ function ProblemResizer({ onResize }) {
 
   return (
     <Wrapper onMouseDown={() => setIsMouseDown(true)}>
-      <Divider />
-      <button type='button'>temp</button>
       <Divider />
     </Wrapper>
   );

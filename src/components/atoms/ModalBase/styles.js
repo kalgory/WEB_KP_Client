@@ -19,15 +19,6 @@ const fadeIn = keyframes`
   }
 `;
 
-const fadeOut = keyframes`
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-`;
-
 export const Content = styled.div`
   position: absolute;
   top: 45%;
@@ -46,6 +37,6 @@ export const Content = styled.div`
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 
-  animation-name: ${({ isVisible }) => (isVisible ? fadeIn : fadeOut)};
+  animation-name: ${fadeIn};
   animation-duration: 0.15s;
 `;

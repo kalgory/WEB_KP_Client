@@ -1,12 +1,9 @@
-import dynamic from 'next/dynamic';
 import { RecoilRoot } from 'recoil';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-import GlobalStyle from '@/styles/globalStyle';
+import ModalProvider from '@/components/organisms/ModalProvider';
 
-const AuthModal = dynamic(() => import('@/components/molecules/AuthModal'), {
-  ssr: false,
-});
+import GlobalStyle from '@/styles/globalStyle';
 
 const queryClient = new QueryClient();
 
@@ -15,9 +12,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <RecoilRoot>
       <QueryClientProvider client={queryClient}>
-        <GlobalStyle />
-        <AuthModal />
-        <Component {...pageProps} />
+        <ModalProvider>
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </ModalProvider>
       </QueryClientProvider>
     </RecoilRoot>
   );

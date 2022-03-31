@@ -2,8 +2,9 @@ import dynamic from 'next/dynamic';
 import Head from 'next/head';
 
 import Header from '@/components/molecules/Header';
+import NavigationButton from '@/components/atoms/NavigationButton';
 
-import { Center } from '@/styles/pages/styles';
+import { Center } from '@/styles/common';
 
 import { withSession } from '@/utils/session';
 
@@ -20,6 +21,12 @@ function Index() {
       <Header />
       <Center>
         <Timer />
+        <NavigationButton
+          href='/problems/1'
+          disabled={false}
+        >
+          Start
+        </NavigationButton>
       </Center>
     </>
   );
