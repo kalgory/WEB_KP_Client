@@ -4,4 +4,8 @@ const createJestConfig = nextJest({
   dir: './',
 });
 
-module.exports = createJestConfig();
+const customJestConfig = {
+  testPathIgnorePatterns: ['<rootDir>/cypress/'],
+};
+
+module.exports = createJestConfig(customJestConfig);
