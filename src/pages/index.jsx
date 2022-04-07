@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 
@@ -6,13 +7,16 @@ import NavigationButton from '@/components/atoms/NavigationButton';
 
 import { Center } from '@/styles/common';
 
-import { withSession } from '@/utils/session';
+import fetcher from '@/utils/fetcher';
 
 const Timer = dynamic(() => import('@/components/atoms/Timer'), {
   ssr: false,
 });
 
 function Index() {
+  useEffect(() => {
+    fetcher.get('/users/me').then(({ data }) => console.log(data));
+  }, []);
   return (
     <>
       <Head>
@@ -32,6 +36,10 @@ function Index() {
   );
 }
 
-export const getServerSideProps = withSession();
+export function getServerSideProps() {
+  return {
+    props: {},
+  };
+}
 
 export default Index;

@@ -8,7 +8,8 @@
     "lint": "next lint",
     "test:unit": "jest",
     "test:e2e:open": "cypress open",
-    "test:e2e:run": "cypress run"
+    "test:e2e:run": "cypress run",
+    "mock": "npx json-server --watch ./mocks/db.json --port 3001 --routes ./mocks/routes.json"
   },
   "dependencies": {
     "@monaco-editor/react": "^4.3.1",
