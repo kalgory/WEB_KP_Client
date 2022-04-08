@@ -7,7 +7,7 @@ module.exports = {
     if (process.env.NODE_ENV === 'development') {
       return [
         {
-          source: '/:path*',
+          source: '/api/:path*',
           destination: 'http://localhost:3001/:path*',
         },
       ];
