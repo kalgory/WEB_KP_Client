@@ -9,5 +9,6 @@
   "endOfLine": "lf",
   "trailingComma": "all",
   "quoteProps": "as-needed",
-  "bracketSpacing": true
+  "bracketSpacing": true,
+  "singleAttributePerLine": true
 }

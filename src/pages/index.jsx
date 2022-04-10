@@ -1,26 +1,59 @@
+import { dehydrate, QueryClient } from 'react-query';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 
-import Header from 'src/components/molecules/Header';
+import NavigationButton from '@/components/atoms/NavigationButton';
+import Header from '@/components/molecules/Header';
 
-import { Center } from 'src/styles/pages/styles';
+import { Center, FixedScreen } from '@/styles/common';
 
-const Timer = dynamic(() => import('src/components/atoms/Timer'), {
+import fetcher from '@/utils/fetcher';
+
+import { useUsersMe } from '@/hooks/queries/user';
+
+const Timer = dynamic(() => import('@/components/atoms/Timer'), {
   ssr: false,
 });
 
-function Home() {
+function Index() {
+  const { data } = useUsersMe();
+  console.log(data);
+
   return (
     <>
       <Head>
         <title>KP</title>
       </Head>
-      <Header />
-      <Center>
-        <Timer />
-      </Center>
+      <FixedScreen
+        gradient
+        flexDirection='column'
+      >
+        <Header />
+        <Center>
+          <Timer />
+          <NavigationButton
+            href='/problems/1'
+            disabled={false}
+          >
+            Start
+          </NavigationButton>
+        </Center>
+      </FixedScreen>
     </>
   );
 }
 
-export default Home;
+export async function getServerSideProps() {
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery(['users/me'], async () => {
+    const { data } = await fetcher.get('/api/users/me');
+    return data;
+  });
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+}
+
+export default Index;

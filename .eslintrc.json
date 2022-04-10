@@ -1,14 +1,16 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jest": true
   },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
     "airbnb",
     "prettier",
-    "next/core-web-vitals"
+    "plugin:@next/next/recommended",
+    "plugin:cypress/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -45,9 +47,17 @@
   },
   "settings": {
     "import/resolver": {
-      "node": {
-        "paths": [
-          "."
+      "alias": {
+        "map": [
+          [
+            "@",
+            "./src"
+          ]
+        ],
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".json"
         ]
       }
     }

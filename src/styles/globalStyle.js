@@ -8,8 +8,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: #7454f5;
-    background: linear-gradient(100deg, #7454f5 0%, #6b3295 100%);
     color: #ffffff;
   }
 

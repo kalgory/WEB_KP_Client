@@ -1,18 +1,18 @@
-import Logo from 'src/components/atoms/Logo';
-import Button from 'src/components/atoms/Button';
+import Logo from '@/components/atoms/Logo';
+import HeaderButton from '@/components/atoms/HeaderButton';
 
-import useAuthModal from 'src/hooks/useAuthModal';
+import useModal from '@/hooks/useModal';
 
 import { Wrapper, Spacer } from './styles';
 
 function Header() {
-  const { show } = useAuthModal();
+  const { show } = useModal();
 
   return (
     <Wrapper>
       <Logo />
       <Spacer />
-      <Button onClick={() => show()}>Sign in</Button>
+      <HeaderButton onClick={() => show()}>Sign in</HeaderButton>
     </Wrapper>
   );
 }

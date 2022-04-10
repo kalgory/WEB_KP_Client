@@ -1,35 +1,24 @@
-import { useRef } from 'react';
-// import { useRouter } from 'next/router';
+import CodeEditor from '@/components/atoms/CodeEditor';
+import ProblemHeader from '@/components/molecules/ProblemHeader';
+import ProblemContent from '@/components/atoms/ProblemContent';
+import ProblemFooter from '@/components/molecules/ProblemFooter';
+import ProblemResizer from '@/components/molecules/ProblemResizer';
 
-import CodeEditor from 'src/components/atoms/CodeEditor';
-import ProblemContent from 'src/components/atoms/ProblemContent';
-import ProblemFooter from 'src/components/molecules/ProblemFooter';
-import ProblemResizer from 'src/components/molecules/ProblemResizer';
+import { Col, FixedScreen, Row } from '@/styles/common';
 
 function Problem() {
-  // const router = useRouter();
-  const problemContentContainerRef = useRef(null);
-
-  const adjustSize = (contentWidth) => {
-    problemContentContainerRef.current.style.width = `${contentWidth}px`;
-  };
-
   return (
-    <div>
-      {/* <PageHeader onBack={() => router.back()} title='다리 건너기' subTitle='실버3' /> */}
-      <main>
-        <div ref={problemContentContainerRef}>
+    <FixedScreen>
+      <Col>
+        <ProblemHeader title='다리 건너기' />
+        <Row flexGrow={1}>
           <ProblemContent />
-        </div>
-        <div>
-          <ProblemResizer onResize={adjustSize} />
-        </div>
-        <div>
+          <ProblemResizer />
           <CodeEditor />
-        </div>
-      </main>
-      <ProblemFooter />
-    </div>
+        </Row>
+        <ProblemFooter />
+      </Col>
+    </FixedScreen>
   );
 }
 

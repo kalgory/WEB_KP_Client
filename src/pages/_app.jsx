@@ -1,20 +1,24 @@
-import dynamic from 'next/dynamic';
-import { RecoilRoot } from 'recoil';
+import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
+import { useState } from 'react';
 
-import GlobalStyle from 'src/styles/globalStyle';
+import ModalProvider from '@/components/organisms/ModalProvider';
 
-const AuthModal = dynamic(() => import('src/components/organisms/AuthModal'), {
-  ssr: false,
-});
+import GlobalStyle from '@/styles/globalStyle';
 
 // eslint-disable-next-line react/prop-types
 function MyApp({ Component, pageProps }) {
+  const [queryClient] = useState(() => new QueryClient());
+
   return (
-    <RecoilRoot>
-      <GlobalStyle />
-      <AuthModal />
-      <Component {...pageProps} />
-    </RecoilRoot>
+    <QueryClientProvider client={queryClient}>
+      {/* eslint-disable-next-line react/prop-types */}
+      <Hydrate state={pageProps.dehydratedState}>
+        <ModalProvider>
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </ModalProvider>
+      </Hydrate>
+    </QueryClientProvider>
   );
 }
 

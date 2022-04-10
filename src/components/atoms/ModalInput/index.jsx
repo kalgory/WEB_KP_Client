@@ -3,7 +3,14 @@ import PropTypes from 'prop-types';
 import { Input } from './styles';
 
 function ModalInput({ type, placeholder, autoFocus, name }) {
-  return <Input type={type} placeholder={placeholder} autoFocus={autoFocus} name={name} />;
+  return (
+    <Input
+      type={type}
+      placeholder={placeholder}
+      autoFocus={autoFocus}
+      name={name}
+    />
+  );
 }
 
 ModalInput.propTypes = {
