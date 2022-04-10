@@ -11,11 +11,17 @@ export const Center = styled.div`
   transform: translateY(-50%);
 `;
 
-export const Full = styled.div`
+export const FixedScreen = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
-  background-color: ${({ backgroundColor }) => backgroundColor};
+  flex-direction: ${({ flexDirection }) => flexDirection};
+  background: ${({ backgroundColor, gradient }) => {
+    if (gradient) {
+      return 'linear-gradient(120deg, #7454f5 10%, #265e62 100%)';
+    }
+    return backgroundColor ?? '#1e1e1e';
+  }};
 `;
 
 export const Row = styled.div`
