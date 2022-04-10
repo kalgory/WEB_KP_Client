@@ -1,29 +1,33 @@
-import { useEffect } from 'react';
+import { dehydrate, QueryClient } from 'react-query';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 
-import Header from '@/components/molecules/Header';
 import NavigationButton from '@/components/atoms/NavigationButton';
+import Header from '@/components/molecules/Header';
 
 import { Center, FixedScreen } from '@/styles/common';
 
 import fetcher from '@/utils/fetcher';
+
+import { useUsersMe } from '@/hooks/queries/user';
 
 const Timer = dynamic(() => import('@/components/atoms/Timer'), {
   ssr: false,
 });
 
 function Index() {
-  useEffect(() => {
-    fetcher.get('/api/users/me').then(({ data }) => console.log(data));
-  }, []);
+  const { data } = useUsersMe();
+  console.log(data);
 
   return (
     <>
       <Head>
         <title>KP</title>
       </Head>
-      <FixedScreen flexDirection='column'>
+      <FixedScreen
+        gradient
+        flexDirection='column'
+      >
         <Header />
         <Center>
           <Timer />
@@ -39,9 +43,16 @@ function Index() {
   );
 }
 
-export function getServerSideProps() {
+export async function getServerSideProps() {
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery(['users/me'], async () => {
+    const { data } = await fetcher.get('/api/users/me');
+    return data;
+  });
   return {
-    props: {},
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
   };
 }
 

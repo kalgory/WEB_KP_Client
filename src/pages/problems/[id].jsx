@@ -8,7 +8,7 @@ import { Col, FixedScreen, Row } from '@/styles/common';
 
 function Problem() {
   return (
-    <FixedScreen backgroundColor='#1e1e1e'>
+    <FixedScreen>
       <Col>
         <ProblemHeader title='다리 건너기' />
         <Row flexGrow={1}>

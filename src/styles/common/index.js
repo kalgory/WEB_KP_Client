@@ -16,8 +16,12 @@ export const FixedScreen = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: ${({ flexDirection }) => flexDirection};
-  background: ${({ backgroundColor }) =>
-    backgroundColor ?? `linear-gradient(120deg, #7454f5 10%, #265e62 100%);`};
+  background: ${({ backgroundColor, gradient }) => {
+    if (gradient) {
+      return 'linear-gradient(120deg, #7454f5 10%, #265e62 100%)';
+    }
+    return backgroundColor ?? '#1e1e1e';
+  }};
 `;
 
 export const Row = styled.div`
